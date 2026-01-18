@@ -22,34 +22,34 @@ export class SolutionsComponent {
     {
       id: 'saude',
       name: 'Saúde',
-      tag: 'HEALTHTECH',
-      title: 'Gestão Hospitalar Inteligente',
-      description: 'Desenvolvemos sistemas integrados que conectam prontuários eletrônicos, agendamentos e monitoramento de pacientes em tempo real. Nossa solução de IA auxilia no diagnóstico precoce e otimiza a alocação de recursos, reduzindo filas de espera em até 40% e melhorando a experiência do paciente.',
-      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop'
+      tag: 'HEALTH',
+      title: 'Agente virtual de agendamentos para clínicas',
+      description: 'Desenvolvimento de agentes de agendamento inteligente e independente. Utilizando IA conversacional, o agente interage com pacientes para marcar, remarcar ou cancelar consultas, integrando-se diretamente com sistemas de gestão clínica. O projeto inclui reconhecimento de linguagem natural para entender solicitações complexas e fornecer respostas contextuais.',
+      image: '/saude.jpg'
     },
     {
-      id: 'engenharia',
-      name: 'Engenharia',
-      tag: 'CONSTRUTECH',
-      title: 'BIM e Gestão de Obras 4.0',
-      description: 'Plataforma completa para gerenciamento de projetos de engenharia com modelagem BIM integrada, acompanhamento de cronograma em tempo real e controle de custos automatizado. Sensores IoT monitoram o progresso da obra e alertam sobre desvios, garantindo entregas no prazo e dentro do orçamento.',
-      image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&h=400&fit=crop'
+      id: 'financeiro',
+      name: 'Financeiro',
+      tag: 'FINANCE',
+      title: 'Régua de cobrança automatizada',
+      description: 'Implementação de fluxos financeiros autônomos que monitoram o "contas a receber" em tempo real. O sistema manda diariamente mensagens personalizadas, adaptando o tom e a abordagem conforme o perfil do cliente. A solução integra-se com sistemas ERP para atualização automática do status de pagamento.',
+      image: '/financeiro.jpg'
     },
     {
-      id: 'industria',
-      name: 'Indústria',
-      tag: 'METALMECÂNICA',
-      title: 'Manutenção Preditiva 4.0',
-      description: 'Sistema de monitoramento industrial com sensores IoT e algoritmos de machine learning que preveem falhas em equipamentos antes que aconteçam. A integração com ERPs existentes permite gestão unificada da produção, resultando em 50% de redução em paradas não planejadas e aumento significativo da vida útil dos ativos.',
-      image: 'https://images.unsplash.com/photo-1513828583688-c52646db42da?w=600&h=400&fit=crop'
+      id: 'recursosHumanos',
+      name: 'Recursos Humanos',
+      tag: 'HUMAN RESOURCES',
+      title: 'Triagem de currículos com IA',
+      description: 'Criação de um agente especializado em recrutamento que automatiza a triagem inicial de currículos. Utilizando processamento de linguagem natural, o agente avalia candidatos com base em critérios pré-definidos, classificando-os e gerando rankings de melhores candidatos.',
+      image: '/rh.jpg'
     },
     {
-      id: 'logistica',
-      name: 'Logística',
-      tag: 'SUPPLY CHAIN',
-      title: 'Roteirização e Rastreamento Inteligente',
-      description: 'Solução completa de gestão logística com roteirização otimizada por IA, rastreamento em tempo real e previsão de demanda. Integramos toda a cadeia de suprimentos em uma única plataforma, reduzindo custos de transporte em 30% e melhorando o índice de entregas no prazo para 98%.',
-      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=400&fit=crop'
+      id: 'comercial',
+      name: 'Comercial',
+      tag: 'SALES',
+      title: 'Agente para funil de vendas',
+      description: 'Desenvolvimento de um agente de vendas que interage com leads em múltiplos canais, qualificando-os e nutrindo-os ao longo do funil de vendas. O agente utiliza técnicas de IA para personalizar comunicações, agendar reuniões e fornecer informações relevantes sobre produtos ou serviços, integrando-se com CRM para atualização automática dos dados dos leads.',
+      image: '/comercial.jpg'
     }
   ];
 
