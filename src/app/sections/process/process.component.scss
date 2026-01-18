@@ -96,7 +96,25 @@
   display: flex;
   flex-direction: column;
   align-self: flex-end;
+  overflow: hidden;
 
+  // Texture overlay
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/effects/texture.png');
+    background-repeat: repeat;
+    background-size: auto;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.5;
+  }
+
+  // Border gradient
   &::before {
     content: '';
     position: absolute;
@@ -113,6 +131,15 @@
     -webkit-mask-composite: xor;
     mask-composite: exclude;
     pointer-events: none;
+    z-index: 1;
+  }
+
+  // All content above texture
+  .step-header,
+  .step-title,
+  .step-description {
+    position: relative;
+    z-index: 2;
   }
 
   &:hover {
@@ -191,6 +218,29 @@
   background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
   color: #fff;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/effects/noise.png');
+    background-repeat: repeat;
+    background-size: 200px;
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  // Texto e ícone acima da textura
+  > * {
+    position: relative;
+    z-index: 1;
+  }
 
   &:hover {
     background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
