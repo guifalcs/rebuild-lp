@@ -2,13 +2,22 @@
   <div class="header-logo">
     <img src="logo.png" alt="Rebuild Logo" />
   </div>
-  <nav class="nav">
+  
+  <button class="hamburger" [class.active]="isMenuOpen" (click)="toggleMenu()" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+
+  <nav class="nav" [class.active]="isMenuOpen">
     <ul class="nav-links">
-      <li><a href="#" class="nav-link active">Home</a></li>
-      <li><a href="#" class="nav-link">Projetos</a></li>
-      <li><a href="#" class="nav-link">Serviços</a></li>
-      <li><a href="#" class="nav-link">Sobre</a></li>
+      <li><a href="#" class="nav-link active" (click)="closeMenu()">Home</a></li>
+      <li><a href="#" class="nav-link" (click)="closeMenu()">Projetos</a></li>
+      <li><a href="#" class="nav-link" (click)="closeMenu()">Serviços</a></li>
+      <li><a href="#" class="nav-link" (click)="closeMenu()">Sobre</a></li>
     </ul>
+    <a href="#" class="btn-contact mobile-contact" (click)="closeMenu()">Fale Conosco</a>
   </nav>
-  <a href="#" class="btn-contact">Fale Conosco</a>
+  
+  <a href="#" class="btn-contact desktop-contact">Fale Conosco</a>
 </header>
