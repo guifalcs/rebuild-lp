@@ -1,0 +1,7 @@
+# robots.txt for Rebuild Landing Page
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rebuild.dev.br/sitemap.xml
