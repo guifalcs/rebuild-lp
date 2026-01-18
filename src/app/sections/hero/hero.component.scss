@@ -1,7 +1,7 @@
 .hero {
   min-height: 100vh;
   background-color: #000;
-  background-image: url('/hero.png');
+  background-image: url('/hero.webp');
   background-size: cover;
   background-position: center right;
   background-repeat: no-repeat;
@@ -150,7 +150,7 @@
 
 @media (max-width: 768px) {
   .hero {
-    background-image: url('/objeto.png');
+    background-image: url('/objeto.webp');
     background-position: center;
     
     &::before {
