@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap');
+
+/* Phonk Font - Custom Font */
+@font-face {
+  font-family: 'Phonk';
+  src: url('/fonts/Phonk.woff2') format('woff2'),
+       url('/fonts/Phonk.woff') format('woff'),
+       url('/fonts/Phonk.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Kanit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: #000;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Headings font
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Phonk', 'Kanit', sans-serif;
+}

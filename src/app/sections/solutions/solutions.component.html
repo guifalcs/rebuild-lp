@@ -1,0 +1,48 @@
+<section class="solutions">
+  <div class="solutions-container">
+    <div class="solutions-content">
+      <!-- Left Side: Tabs + Showcase -->
+      <div class="solutions-left">
+        <div class="sector-tabs">
+          @for (sector of sectors; track sector.id) {
+            <button 
+              class="sector-tab" 
+              [class.active]="activeSector === sector.id"
+              (click)="setActiveSector(sector.id)">
+              {{ sector.name }}
+            </button>
+          }
+        </div>
+
+        <div class="solution-showcase">
+          @for (sector of sectors; track sector.id) {
+            @if (activeSector === sector.id) {
+              <div class="showcase-content">
+                <div class="showcase-image">
+                  <img [src]="sector.image" [alt]="sector.title" />
+                </div>
+                <div class="showcase-info">
+                  <span class="showcase-tag">{{ sector.tag }}</span>
+                  <h3 class="showcase-title">{{ sector.title }}</h3>
+                  <p class="showcase-description">{{ sector.description }}</p>
+                </div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+
+      <!-- Right Side: Title + Description -->
+      <div class="solutions-right">
+        <span class="solutions-label">NOSSOS SETORES</span>
+        <h2 class="solutions-title">
+          Soluções pra<br />
+          sua <span class="highlight">Dor</span>
+        </h2>
+        <p class="solutions-description">
+          Entendemos que cada setor tem desafios únicos. Por isso, desenvolvemos soluções personalizadas que se adaptam à realidade do seu mercado, combinando tecnologia de ponta com conhecimento especializado para transformar problemas em oportunidades de crescimento.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+.fixed-logo {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+  
+  img {
+    width: 60px;
+    height: auto;
+    opacity: 0.3;
+    transition: opacity 0.3s ease;
+    
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
