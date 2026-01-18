@@ -52,6 +52,16 @@
   margin-bottom: 4rem;
 }
 
+.process-label {
+  display: inline-block;
+  font-family: 'Kanit', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 0.2em;
+  margin-bottom: 1rem;
+}
+
 .process-title {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
