@@ -11,10 +11,10 @@
 
   <nav class="nav" [class.active]="isMenuOpen">
     <ul class="nav-links">
-      <li><a href="#" class="nav-link active" (click)="closeMenu()">Home</a></li>
-      <li><a href="#" class="nav-link" (click)="closeMenu()">Projetos</a></li>
-      <li><a href="#" class="nav-link" (click)="closeMenu()">Serviços</a></li>
-      <li><a href="#" class="nav-link" (click)="closeMenu()">Sobre</a></li>
+      <li><a href="#home" class="nav-link active" (click)="scrollToSection('home', $event)">Home</a></li>
+      <li><a href="#sobre" class="nav-link" (click)="scrollToSection('sobre', $event)">Missão</a></li>
+      <li><a href="#projetos" class="nav-link" (click)="scrollToSection('projetos', $event)">Metodologia</a></li>
+      <li><a href="#servicos" class="nav-link" (click)="scrollToSection('servicos', $event)">Soluções</a></li>
     </ul>
     <a href="#" class="btn-contact mobile-contact" (click)="closeMenu()">Fale Conosco</a>
   </nav>
