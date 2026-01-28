@@ -30,6 +30,18 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Global site texture: layered textures from public/assets to compose the background */
+html, body {
+  background-image: 
+    url('/assets/texture.png'),
+    url('/assets/noise.png');
+  background-repeat: repeat, repeat;
+  background-size: auto, 200px;
+  background-position: center center, center center;
+  background-attachment: fixed, fixed;
+  background-blend-mode: normal, overlay;
+}
+
 // Headings font
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Phonk', 'Poppins', sans-serif;
