@@ -12,49 +12,14 @@
   border-radius: 24px;
   position: relative;
   overflow: hidden;
-  background-image: url('/assets/gradient.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  border: none;
+  box-shadow: none;
 
-  // Glass background image
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/glass.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.09;
-    z-index: 0;
-  }
-
-  // Texture overlay
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/effects/texture.png');
-    background-repeat: repeat;
-    background-size: auto;
-    pointer-events: none;
-    z-index: 1;
-    opacity: 0.5;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 4.62px 46.16px 0px;
-  }
-
-  // All text and interactive elements above texture
+  // Keep content above any background (no overlays used now)
   h2, p, a {
     position: relative;
-    z-index: 10;
+    z-index: 1;
   }
 }
 
@@ -70,7 +35,7 @@
   font-weight: 700;
   color: #fff;
   margin-bottom: 2rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 .btn-start {

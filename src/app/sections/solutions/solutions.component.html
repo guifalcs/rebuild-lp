@@ -18,9 +18,6 @@
           @for (sector of sectors; track sector.id) {
             @if (activeSector === sector.id) {
               <div class="showcase-content">
-                <div class="showcase-image">
-                  <img [src]="sector.image" [alt]="sector.title" />
-                </div>
                 <div class="showcase-info">
                   <span class="showcase-tag">{{ sector.tag }}</span>
                   <h3 class="showcase-title">{{ sector.title }}</h3>
