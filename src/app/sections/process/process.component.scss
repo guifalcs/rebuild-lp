@@ -2,7 +2,7 @@
   background-color: #000;
   padding: 6rem 5%;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 
   &::before {
     content: '';
@@ -41,7 +41,7 @@
 }
 
 .process-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   position: relative;
   z-index: 20;
@@ -54,7 +54,7 @@
 
 .process-label {
   display: inline-block;
-  font-family: 'Kanit', sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.875rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.5);
@@ -82,41 +82,83 @@
   line-height: 1.6;
 }
 
-.process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-bottom: 4rem;
-  position: relative;
-  align-items: flex-end;
+// === Stacking Cards Animation ===
+@keyframes scale-down {
+  to {
+    transform: scale(0.9);
+  }
 }
 
-.step-card {
+@keyframes scale-up-width {
+  from {
+    width: 85%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+// === Stacking Cards Container ===
+.stacking-cards {
+  --card-height: 650px;
+  --card-top-offset: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: calc(var(--card-height) - var(--card-top-offset));
+  position: relative;
+}
+
+// === Individual Stacking Card ===
+.stacking-card {
+  position: sticky;
+  top: var(--card-top-offset);
+  height: var(--card-height);
+  z-index: calc(var(--index) + 1);
+  transform-origin: center top;
+  width: 100%;
+  
+  // Scroll-driven animation para browsers que suportam
+  @supports (animation-timeline: view()) {
+    // Animação de scale down quando sai
+    animation: scale-down linear forwards, scale-up-width linear forwards;
+    animation-timeline: view(), view();
+    animation-range: exit -100px exit 200px, entry 0% entry 100%;
+  }
+}
+
+// === Card Inner Container ===
+.card-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  height: 100%;
+  padding: 0;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.05) 0%,
     rgba(255, 255, 255, 0.02) 100%
   );
-  border-radius: 16px;
-  padding: 2rem 1.5rem;
-  position: relative;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  z-index: 20;
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+  position: relative;
   overflow: hidden;
 
   // Texture overlay
-  &::after {
+  &::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/effects/texture.png');
+    background-image: url('/assets/texture.png');
     background-repeat: repeat;
     background-size: auto;
     pointer-events: none;
@@ -124,157 +166,144 @@
     opacity: 0.5;
   }
 
-  // Border gradient
-  &::before {
+  // Reversed layout (image left, content right)
+  &.reverse {
+    grid-template-columns: 1fr 1fr;
+
+    .card-content {
+      order: 2;
+    }
+
+    .card-image {
+      order: 1;
+    }
+  }
+}
+
+// === Card Content ===
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(rgba(28, 28, 30, 0.9), rgba(28, 28, 30, 0.9)),
+    linear-gradient(135deg, #22c55e 0%, #10b981 50%, #9333ea 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.badge-number {
+  font-size: 0.875rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.card-title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.card-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+// === Card Image ===
+.card-image {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  border-radius: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  &::after {
     content: '';
     position: absolute;
     inset: 0;
-    border-radius: 16px;
-    padding: 1px;
     background: linear-gradient(
       135deg,
-      rgba(34, 197, 94, 0.5) 0%,
-      rgba(147, 51, 234, 0.3) 50%,
-      transparent 100%
+      rgba(34, 197, 94, 0.1) 0%,
+      transparent 50%
     );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
     pointer-events: none;
-    z-index: 1;
-  }
-
-  // All content above texture
-  .step-header,
-  .step-title,
-  .step-description {
-    position: relative;
-    z-index: 2;
-  }
-
-  &:hover {
-    transform: translateY(-5px);
-    border-color: rgba(34, 197, 94, 0.3);
   }
 }
 
-.step-1 {
-  min-height: 200px;
-}
-
-.step-2 {
-  min-height: 260px;
-}
-
-.step-3 {
-  min-height: 320px;
-}
-
-.step-4 {
-  min-height: 380px;
-}
-
-.step-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.step-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: rgba(255, 255, 255, 0.15);
-}
-
-.step-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.2) 0%, rgba(147, 51, 234, 0.2) 100%);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #22c55e;
-}
-
-.step-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 0.75rem;
-}
-
-.step-description {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.5;
-}
-
-.process-cta {
-  display: flex;
-  justify-content: center;
-}
-
-.btn-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
-  color: #fff;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/assets/noise.png');
-    background-repeat: repeat;
-    background-size: 200px;
-    opacity: 0.15;
-    pointer-events: none;
-    z-index: 0;
-  }
-
-  // Texto e ícone acima da textura
-  > * {
-    position: relative;
-    z-index: 1;
-  }
-
-  &:hover {
-    background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(147, 51, 234, 0.4);
-  }
-
-  svg {
-    transition: transform 0.3s ease;
-  }
-
-  &:hover svg {
-    transform: translateX(4px);
+// === Hover Effects ===
+.stacking-card:hover {
+  .card-image img {
+    transform: scale(1.05);
   }
 }
 
 // Responsive
 @media (max-width: 1024px) {
-  .process-steps {
-    grid-template-columns: repeat(2, 1fr);
+  .stacking-cards {
+    --card-height: 700px;
   }
 
-  .step-1, .step-2, .step-3, .step-4 {
-    margin-top: 0;
+  .card-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    
+    &.reverse {
+      grid-template-columns: 1fr;
+      
+      .card-content {
+        order: 1;
+      }
+
+      .card-image {
+        order: 2;
+      }
+    }
+  }
+
+  .card-image {
+    height: 250px;
+    border-radius: 0;
+  }
+
+  .card-content {
+    padding: 2rem;
   }
 }
 
@@ -289,12 +318,25 @@
     }
   }
 
-  .process-steps {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+  .stacking-cards {
+    --card-height: 700px;
+    --card-top-offset: 4rem;
+    gap: 2rem;
   }
 
-  .step-card {
-    margin-top: 0 !important;
+  .card-inner {
+    padding: 0;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
   }
 }
