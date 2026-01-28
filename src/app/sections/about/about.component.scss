@@ -1,4 +1,4 @@
-.about {
+﻿.about {
   background-color: #000;
   padding: 6rem 5%;
   position: relative;
@@ -21,38 +21,23 @@
   }
 
   // All text and interactive elements above texture
-  h2, h3, p, a, span, svg {
+  h2, h3, h4, p, a, span, svg {
     position: relative;
     z-index: 20;
   }
 }
 
 .about-container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   position: relative;
   z-index: 20;
 }
 
-.about-content {
-  display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 4rem;
-  align-items: start;
-}
-
-.about-text {
-  position: sticky;
-  top: 120px;
-}
-
-.about-label {
-  display: inline-block;
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: rgba(255, 255, 255, 0.5);
-  letter-spacing: 0.2em;
-  margin-bottom: 1rem;
+// === Header Styles ===
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .about-title {
@@ -70,23 +55,79 @@
   }
 }
 
-.about-description {
-  font-size: 1.1rem;
-  color: rgba(255, 255, 255, 0.6);
+.about-subtitle {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.5);
   line-height: 1.6;
-  margin-bottom: 2rem;
 }
 
-.btn-view {
-  display: inline-block;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+// === Challenges Grid ===
+.about-challenges {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.challenge-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.challenge-number {
+  font-size: 2rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.3);
+  margin-bottom: 1.5rem;
+}
+
+.challenge-title {
+  font-size: 1.125rem;
+  font-weight: 700;
   color: #fff;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.challenge-description {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.5;
+}
+
+// === CTAs ===
+.about-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 50px;
   font-size: 1rem;
   font-weight: 600;
   text-decoration: none;
-  border-radius: 50px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover svg {
+    transform: translateX(4px);
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+  color: #fff;
   position: relative;
   overflow: hidden;
 
@@ -118,24 +159,158 @@
   }
 }
 
-.about-cards {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+  }
 }
 
-.about-card {
+// === Responsive ===
+@media (max-width: 1024px) {
+  .about-challenges {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 5%;
+  }
+
+  .about-title {
+    br {
+      display: none;
+    }
+  }
+
+  .about-subtitle {
+    br {
+      display: none;
+    }
+  }
+
+  .about-challenges {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-cta {
+    flex-direction: column;
+    align-items: stretch;
+
+    .btn {
+      justify-content: center;
+    }
+  }
+}
+
+.about-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 20;
+}
+
+// === Header Styles ===
+.about-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+
+  .highlight {
+    background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+.about-subtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+// === Stacking Cards Animation ===
+@keyframes scale-down {
+  to {
+    transform: scale(0.9);
+  }
+}
+
+@keyframes scale-up-width {
+  from {
+    width: 85%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+// === Stacking Cards Container ===
+.stacking-cards {
+  --card-height: 650px;
+  --card-top-offset: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  padding-bottom: calc(var(--card-height) - var(--card-top-offset));
+  position: relative;
+}
+
+// === Individual Stacking Card ===
+.stacking-card {
+  position: sticky;
+  top: var(--card-top-offset);
+  height: var(--card-height);
+  z-index: calc(var(--index) + 1);
+  transform-origin: center top;
+  width: 100%;
+  
+  // Scroll-driven animation para browsers que suportam
+  @supports (animation-timeline: view()) {
+    // Animação de scale down quando sai
+    animation: scale-down linear forwards, scale-up-width linear forwards;
+    animation-timeline: view(), view();
+    animation-range: exit -100px exit 200px, entry 0% entry 100%;
+  }
+}
+
+// === Card Inner Container ===
+.card-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+  height: 100%;
+  padding: 0;
   background: linear-gradient(
     135deg,
-    rgba(28, 28, 30, 0.6) 0%,
-    rgba(28, 28, 30, 0.4) 100%
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
   );
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  transition: all 0.3s ease;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.5),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   position: relative;
   overflow: hidden;
 
@@ -147,7 +322,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/effects/texture.png');
+    background-image: url('/assets/texture.png');
     background-repeat: repeat;
     background-size: auto;
     pointer-events: none;
@@ -155,59 +330,144 @@
     opacity: 0.5;
   }
 
-  // All content above texture
-  .card-icon,
-  .card-title,
-  .card-description {
-    position: relative;
-    z-index: 1;
-  }
+  // Reversed layout (image left, content right)
+  &.reverse {
+    grid-template-columns: 1fr 1fr;
 
-  &:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    transform: translateY(-5px);
-    background: linear-gradient(
-      135deg,
-      rgba(28, 28, 30, 0.7) 0%,
-      rgba(28, 28, 30, 0.5) 100%
-    );
+    .card-content {
+      order: 2;
+    }
+
+    .card-image {
+      order: 1;
+    }
   }
 }
 
-.card-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.05);
+// === Card Content ===
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  margin-bottom: 1.25rem;
-  color: #fff;
+}
+
+.card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid transparent;
+  background-image: 
+    linear-gradient(rgba(28, 28, 30, 0.9), rgba(28, 28, 30, 0.9)),
+    linear-gradient(135deg, #22c55e 0%, #10b981 50%, #9333ea 100%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1.5rem;
+  width: fit-content;
+}
+
+.badge-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.badge-number {
+  font-size: 0.875rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #22c55e 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .card-title {
-  font-size: 1.125rem;
-  font-weight: 600;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
   color: #fff;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .card-description {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.5);
-  line-height: 1.5;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
 }
 
-// Responsive
-@media (max-width: 1024px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+// === Card Image ===
+.card-image {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  border-radius: 0;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
   }
 
-  .about-text {
-    position: static;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(34, 197, 94, 0.1) 0%,
+      transparent 50%
+    );
+    pointer-events: none;
+  }
+}
+
+// === Hover Effects ===
+.stacking-card:hover {
+  .card-image img {
+    transform: scale(1.05);
+  }
+}
+
+// === Responsive ===
+@media (max-width: 1024px) {
+  .stacking-cards {
+    --card-height: 700px;
+  }
+
+  .card-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0;
+    
+    &.reverse {
+      grid-template-columns: 1fr;
+      
+      .card-content {
+        order: 1;
+      }
+
+      .card-image {
+        order: 2;
+      }
+    }
+  }
+
+  .card-image {
+    height: 250px;
+    border-radius: 0;
+  }
+
+  .card-content {
+    padding: 2rem;
   }
 }
 
@@ -216,8 +476,25 @@
     padding: 4rem 5%;
   }
 
-  .about-cards {
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
+  .stacking-cards {
+    --card-height: 700px;
+    --card-top-offset: 4rem;
+    gap: 2rem;
+  }
+
+  .card-inner {
+    padding: 0;
+  }
+
+  .card-content {
+    padding: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1.25rem;
+  }
+
+  .card-description {
+    font-size: 0.9rem;
   }
 }
