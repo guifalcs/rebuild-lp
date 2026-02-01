@@ -30,7 +30,7 @@ export class SolutionsComponent {
       name: 'Financeiro',
       tag: 'FINANCE',
       title: 'Régua de cobrança automatizada',
-      description: 'Implementação de fluxos financeiros autônomos que monitoram o "contas a receber" em tempo real. O sistema manda diariamente mensagens personalizadas, adaptando o tom e a abordagem conforme o perfil do cliente. A solução integra-se com sistemas ERP para atualização automática do status de pagamento.'
+      description: "Implementação de fluxos financeiros autônomos que monitoram o \"contas a receber\" em tempo real. O sistema encaminha diariamente mensagens personalizadas, adaptando o tom e a abordagem conforme o perfil do cliente. A solução integra-se com sistemas ERP's para atualização automática do status de pagamento."
     },
     {
       id: 'recursosHumanos',
