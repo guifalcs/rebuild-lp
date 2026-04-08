@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.caramelosec.com)",
+      "WebFetch(domain:www.firecrawl.dev)",
+      "WebFetch(domain:salte.app)",
+      "WebFetch(domain:caramelosec.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:web.archive.org)",
+      "mcp__Apify__get-actor-output",
+      "Bash(npx ng:*)",
+      "Bash(find src:*)"
+    ]
+  }
+}

@@ -5,11 +5,15 @@
       <div class="solutions-left">
         <div class="sector-tabs">
           @for (sector of sectors; track sector.id) {
-            <button 
-              class="sector-tab" 
+            <button
+              class="sector-tab"
               [class.active]="activeSector === sector.id"
               (click)="setActiveSector(sector.id)">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path [attr.d]="sector.icon"/>
+              </svg>
               {{ sector.name }}
+              <span class="tab-indicator"></span>
             </button>
           }
         </div>
@@ -31,11 +35,11 @@
 
       <!-- Right Side: Title + Description -->
       <div class="solutions-right">
-        <span class="solutions-label">NOSSOS PROJETOS</span>
-        <h2 class="solutions-title">
+        <span class="solutions-label" appScrollReveal="fade-in">NOSSOS PROJETOS</span>
+        <h2 class="solutions-title" appScrollReveal="fade-up" [revealDelay]="0.1">
           Soluções
         </h2>
-        <p class="solutions-description">
+        <p class="solutions-description" appScrollReveal="fade-up" [revealDelay]="0.2">
           Entendemos que cada setor tem desafios únicos. Por isso, desenvolvemos soluções personalizadas que se adaptam à realidade do seu negócio, combinando tecnologia de ponta com conhecimento especializado para transformar problemas em oportunidades de crescimento.
         </p>
       </div>

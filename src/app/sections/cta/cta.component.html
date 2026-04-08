@@ -1,7 +1,14 @@
 <section class="cta">
   <div class="cta-card">
-    <p class="cta-subtitle">Pronto para transformar sua empresa?</p>
-    <h2 class="cta-title">Fale com nossos especialistas e potencialize os seus resultados!</h2>
-    <a href="https://wa.me/5531994422569" target="_blank" rel="noopener noreferrer" class="btn-start">COMECE AGORA</a>
+    <!-- Decorative orbs -->
+    <div class="cta-orb cta-orb--purple"></div>
+    <div class="cta-orb cta-orb--green"></div>
+
+    <p class="cta-subtitle" appScrollReveal="fade-up">Pronto para transformar sua empresa?</p>
+    <h2 class="cta-title" appScrollReveal="fade-up" [revealDelay]="0.1">Fale com nossos especialistas e potencialize os seus resultados!</h2>
+    <a [href]="whatsappUrl" target="_blank" rel="noopener noreferrer" class="btn-start" appScrollReveal="scale-in" [revealDelay]="0.25">
+      <span class="btn-start-text">COMECE AGORA</span>
+      <span class="btn-start-shimmer"></span>
+    </a>
   </div>
 </section>

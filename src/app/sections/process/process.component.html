@@ -2,17 +2,17 @@
   <div class="process-container">
     <!-- Header centralizado -->
     <div class="process-header">
-      <span class="process-label">COMO FAZEMOS</span>
-      <h2 class="process-title">
+      <span class="process-label" appScrollReveal="fade-in">COMO FAZEMOS</span>
+      <h2 class="process-title" appScrollReveal="fade-up" [revealDelay]="0.1">
         O Caminho para o <span class="highlight">Sucesso Operacional</span>
       </h2>
-      <p class="process-subtitle">
+      <p class="process-subtitle" appScrollReveal="fade-up" [revealDelay]="0.2">
         Nossa metodologia comprovada transforma tarefas manuais e sem clareza em
         processos otimizados e orientados a dados.
       </p>
     </div>
 
-    <!-- Stacking Cards com scroll animation -->
+    <!-- Stacking Cards com GSAP ScrollTrigger -->
     <div class="stacking-cards">
       <!-- Card 1 -->
       <article class="stacking-card" style="--index: 0">

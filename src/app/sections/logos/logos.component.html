@@ -1,0 +1,20 @@
+<section class="logos">
+  <p class="logos-label">Tecnologias que utilizamos para transformar seu negócio</p>
+  <div class="marquee">
+    <div class="marquee-track">
+      @for (tech of technologies; track tech.name) {
+        <div class="marquee-item">
+          <img [src]="'https://cdn.simpleicons.org/' + tech.icon + '/ffffff'" [alt]="tech.name" width="24" height="24" loading="lazy" />
+          <span>{{ tech.name }}</span>
+        </div>
+      }
+      <!-- Duplicate for seamless loop -->
+      @for (tech of technologies; track tech.name) {
+        <div class="marquee-item">
+          <img [src]="'https://cdn.simpleicons.org/' + tech.icon + '/ffffff'" [alt]="tech.name" width="24" height="24" loading="lazy" />
+          <span>{{ tech.name }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>

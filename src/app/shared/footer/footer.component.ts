@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WHATSAPP_URL } from '../constants';
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  whatsappUrl = WHATSAPP_URL;
   currentYear = new Date().getFullYear();
 
   scrollToTop(): void {
