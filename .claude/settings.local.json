@@ -9,7 +9,8 @@
       "WebFetch(domain:web.archive.org)",
       "mcp__Apify__get-actor-output",
       "Bash(npx ng:*)",
-      "Bash(find src:*)"
+      "Bash(find src:*)",
+      "mcp__e21048f6-ca22-49fa-8624-b8d9a76d81ec__list_deployments"
     ]
   }
 }
