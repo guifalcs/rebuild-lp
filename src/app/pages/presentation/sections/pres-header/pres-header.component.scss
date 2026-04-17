@@ -1,0 +1,205 @@
+.pres-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: background 0.35s ease, backdrop-filter 0.35s ease, border-color 0.35s ease;
+  border-bottom: 1px solid transparent;
+
+  &.scrolled {
+    background: rgba(8, 8, 12, 0.72);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border-bottom-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
+.pres-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.pres-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+
+  img {
+    height: 28px;
+    width: auto;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover img {
+    opacity: 0.85;
+  }
+}
+
+.pres-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.35rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 999px;
+    backdrop-filter: blur(12px);
+  }
+
+  a {
+    display: inline-block;
+    padding: 0.55rem 1.1rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    border-radius: 999px;
+    transition: color 0.25s ease, background 0.25s ease;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &.active {
+      color: #fff;
+      background: linear-gradient(135deg, rgba(147, 51, 234, 0.35) 0%, rgba(34, 197, 94, 0.25) 100%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+    }
+  }
+}
+
+.pres-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.25rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+
+  svg {
+    transition: transform 0.25s ease;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(147, 51, 234, 0.35);
+    background: linear-gradient(135deg, #a855f7 0%, #8b5cf6 100%);
+
+    svg { transform: translateX(3px); }
+  }
+}
+
+.pres-hamburger {
+  display: none;
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+
+  span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 1.5px;
+    background: #fff;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease, opacity 0.3s ease, top 0.3s ease;
+
+    &:nth-child(1) { top: calc(50% - 5px); }
+    &:nth-child(3) { top: calc(50% + 5px); }
+  }
+
+  &.active {
+    span:nth-child(1) { top: 50%; transform: translate(-50%, -50%) rotate(45deg); }
+    span:nth-child(2) { opacity: 0; }
+    span:nth-child(3) { top: 50%; transform: translate(-50%, -50%) rotate(-45deg); }
+  }
+}
+
+.pres-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: rgba(8, 8, 12, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.35s ease;
+
+  &.open {
+    max-height: 500px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 1rem 5% 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  a {
+    display: block;
+    padding: 0.85rem 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-radius: 10px;
+    transition: background 0.25s ease, color 0.25s ease;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: #fff;
+    }
+
+    &.mobile-cta {
+      margin-top: 0.5rem;
+      background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+      color: #fff;
+      text-align: center;
+    }
+  }
+}
+
+.pres-progress {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, #22c55e 0%, #9333ea 100%);
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(147, 51, 234, 0.6);
+}
+
+@media (max-width: 960px) {
+  .pres-nav { display: none; }
+  .pres-cta-btn { display: none; }
+  .pres-hamburger { display: inline-flex; align-items: center; justify-content: center; }
+  .pres-mobile-menu { display: block; }
+}

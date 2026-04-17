@@ -1,0 +1,76 @@
+<section class="pres-process">
+  <div class="pres-process-bg" aria-hidden="true">
+    <div class="pres-process-orb"></div>
+  </div>
+
+  <div class="pres-process-header">
+    <span class="pres-process-kicker" appScrollReveal="fade-up">Metodologia</span>
+    <h2 class="pres-process-title" appScrollReveal="fade-up" [revealDelay]="0.1">
+      Do diagnóstico ao
+      <span class="pres-process-accent">go-live</span>, em seis passos.
+    </h2>
+    <p class="pres-process-lead" appScrollReveal="fade-up" [revealDelay]="0.2">
+      Um processo maduro, repetível e auditável. Cada etapa com entregáveis claros,
+      critérios de saída e rituais de alinhamento. Sem surpresas, sem retrabalho.
+    </p>
+  </div>
+
+  <ol class="pres-process-timeline">
+    <li
+      *ngFor="let step of steps; let i = index"
+      class="pres-process-step"
+      [class.pres-process-step--even]="i % 2 === 1"
+      appScrollReveal="fade-up"
+      [revealDelay]="0.06 * i"
+    >
+      <div class="pres-process-step-line" aria-hidden="true">
+        <span class="pres-process-step-dot"></span>
+      </div>
+
+      <div class="pres-process-step-card">
+        <div class="pres-process-step-top">
+          <span class="pres-process-step-number">{{ step.number }}</span>
+          <div class="pres-process-step-icon" aria-hidden="true">
+            <ng-container [ngSwitch]="step.icon">
+              <svg *ngSwitchCase="'search'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <svg *ngSwitchCase="'document'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/>
+                <line x1="8" y1="17" x2="13" y2="17"/>
+              </svg>
+              <svg *ngSwitchCase="'build'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+              </svg>
+              <svg *ngSwitchCase="'check'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11l3 3L22 4"/>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+              </svg>
+              <svg *ngSwitchCase="'rocket'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/>
+                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/>
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/>
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+              </svg>
+              <svg *ngSwitchCase="'infinity'" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18.178 8c-3.01 0-5.03 2.355-6.178 4-1.148-1.645-3.168-4-6.178-4A4.178 4.178 0 0 0 1.644 12c0 2.3 1.875 4 4.178 4 3.01 0 5.03-2.355 6.178-4 1.148 1.645 3.168 4 6.178 4A4.178 4.178 0 0 0 22.356 12a4.178 4.178 0 0 0-4.178-4z"/>
+              </svg>
+            </ng-container>
+          </div>
+        </div>
+
+        <h3 class="pres-process-step-title">{{ step.title }}</h3>
+        <p class="pres-process-step-subtitle">{{ step.subtitle }}</p>
+        <p class="pres-process-step-description">{{ step.description }}</p>
+
+        <ul class="pres-process-step-deliverables">
+          <li *ngFor="let item of step.deliverables">
+            <span class="pres-process-step-bullet" aria-hidden="true"></span>
+            {{ item }}
+          </li>
+        </ul>
+      </div>
+    </li>
+  </ol>
+</section>

@@ -1,0 +1,80 @@
+<section class="pres-solutions">
+  <div class="pres-solutions-bg">
+    <div class="pres-solutions-orb pres-solutions-orb--purple"></div>
+    <div class="pres-solutions-orb pres-solutions-orb--green"></div>
+  </div>
+
+  <div class="pres-solutions-header">
+    <span class="pres-solutions-kicker" appScrollReveal="fade-up">O que fazemos</span>
+    <h2 class="pres-solutions-title" appScrollReveal="fade-up" [revealDelay]="0.1">
+      Seis frentes, uma só
+      <span class="pres-solutions-accent">engenharia de resultado</span>.
+    </h2>
+    <p class="pres-solutions-lead" appScrollReveal="fade-up" [revealDelay]="0.2">
+      Cada solução conecta com as outras. Você começa onde dói mais e expande quando faz sentido —
+      sempre com o mesmo time, a mesma metodologia, o mesmo cuidado.
+    </p>
+  </div>
+
+  <div class="pres-solutions-grid">
+    <article
+      *ngFor="let solution of solutions; let i = index"
+      class="pres-solution"
+      [attr.data-accent]="solution.accent"
+      appScrollReveal="fade-up"
+      [revealDelay]="0.08 * i"
+    >
+      <div class="pres-solution-top">
+        <span class="pres-solution-number">{{ solution.number }}</span>
+        <div class="pres-solution-icon">
+          <ng-container [ngSwitch]="solution.icon">
+            <svg *ngSwitchCase="'automation'" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20v-8"/><path d="M18 20v-4"/><path d="M6 20v-2"/>
+              <circle cx="12" cy="8" r="4"/><path d="M12 4v-2"/>
+            </svg>
+            <svg *ngSwitchCase="'ai'" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="5" width="16" height="14" rx="3"/>
+              <path d="M9 10v4"/><path d="M15 10v4"/><path d="M9 12h6"/>
+              <path d="M12 5V2"/><path d="M2 12h2"/><path d="M20 12h2"/>
+            </svg>
+            <svg *ngSwitchCase="'bi'" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 20h16"/>
+              <rect x="6" y="12" width="3" height="6"/>
+              <rect x="11" y="8" width="3" height="10"/>
+              <rect x="16" y="5" width="3" height="13"/>
+            </svg>
+            <svg *ngSwitchCase="'code'" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="8 18 2 12 8 6"/>
+              <polyline points="16 6 22 12 16 18"/>
+              <line x1="14" y1="4" x2="10" y2="20"/>
+            </svg>
+            <svg *ngSwitchCase="'education'" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10L12 4 2 10l10 6 10-6z"/>
+              <path d="M6 12v5c3 2 9 2 12 0v-5"/>
+            </svg>
+            <svg *ngSwitchCase="'database'" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="8" ry="3"/>
+              <path d="M4 5v6c0 1.66 3.58 3 8 3s8-1.34 8-3V5"/>
+              <path d="M4 11v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/>
+            </svg>
+          </ng-container>
+        </div>
+      </div>
+
+      <h3 class="pres-solution-title">{{ solution.title }}</h3>
+      <p class="pres-solution-tagline">{{ solution.tagline }}</p>
+      <p class="pres-solution-description">{{ solution.description }}</p>
+
+      <ul class="pres-solution-tags">
+        <li *ngFor="let tag of solution.tags">{{ tag }}</li>
+      </ul>
+
+      <div class="pres-solution-arrow" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="7" y1="17" x2="17" y2="7"/>
+          <polyline points="7 7 17 7 17 17"/>
+        </svg>
+      </div>
+    </article>
+  </div>
+</section>

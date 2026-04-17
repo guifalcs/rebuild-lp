@@ -1,0 +1,52 @@
+<section class="pres-team">
+  <div class="pres-team-bg" aria-hidden="true">
+    <div class="pres-team-grid-pattern"></div>
+  </div>
+
+  <div class="pres-team-header">
+    <span class="pres-team-kicker" appScrollReveal="fade-up">Quem conduz</span>
+    <h2 class="pres-team-title" appScrollReveal="fade-up" [revealDelay]="0.1">
+      Um time pequeno, com
+      <span class="pres-team-accent">responsabilidade grande</span>.
+    </h2>
+    <p class="pres-team-lead" appScrollReveal="fade-up" [revealDelay]="0.2">
+      Fundadores envolvidos em cada projeto. Senioridade que você contrata e não sai na primeira
+      reunião: quem conversa com você é quem pensa, executa e responde.
+    </p>
+  </div>
+
+  <div class="pres-team-grid">
+    <article
+      *ngFor="let member of members; let i = index"
+      class="pres-team-card"
+      [attr.data-accent]="member.accent"
+      appScrollReveal="fade-up"
+      [revealDelay]="0.12 * i"
+    >
+      <div class="pres-team-card-top">
+        <div class="pres-team-avatar" aria-hidden="true">
+          <span>{{ member.initials }}</span>
+        </div>
+        <div class="pres-team-status">
+          <span class="pres-team-status-dot"></span>
+          Sócio-fundador
+        </div>
+      </div>
+
+      <h3 class="pres-team-name">{{ member.name }}</h3>
+      <p class="pres-team-role">{{ member.role }}</p>
+      <p class="pres-team-bio">{{ member.bio }}</p>
+
+      <ul class="pres-team-tags">
+        <li *ngFor="let tag of member.tags">{{ tag }}</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="pres-team-footer" appScrollReveal="fade-up" [revealDelay]="0.4">
+    <p>
+      <strong>Time estendido:</strong> engenheiros, cientistas de dados, designers e especialistas
+      alocados por projeto. Pequeno o suficiente para ser ágil, robusto o suficiente para escalar.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,44 @@
+<header class="pres-header" [class.scrolled]="isScrolled">
+  <div class="pres-header-inner">
+    <a routerLink="/" class="pres-brand" aria-label="Voltar para Home">
+      <img src="logo.webp" alt="Rebuild" />
+    </a>
+
+    <nav class="pres-nav">
+      <ul>
+        <li *ngFor="let item of navItems">
+          <a
+            [href]="'#' + item.id"
+            [class.active]="activeSection === item.id"
+            (click)="scrollTo(item.id, $event)"
+            >{{ item.label }}</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <a href="#contato" class="pres-cta-btn" (click)="scrollTo('contato', $event)">
+      <span>Agendar sessão</span>
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path>
+      </svg>
+    </a>
+
+    <button class="pres-hamburger" [class.active]="isMenuOpen" (click)="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="pres-mobile-menu" [class.open]="isMenuOpen">
+    <ul>
+      <li *ngFor="let item of navItems">
+        <a [href]="'#' + item.id" (click)="scrollTo(item.id, $event)">{{ item.label }}</a>
+      </li>
+      <li>
+        <a href="#contato" (click)="scrollTo('contato', $event)" class="mobile-cta">Agendar sessão</a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="pres-progress" [style.width.%]="scrollProgress"></div>
+</header>

@@ -1,0 +1,64 @@
+<section class="pres-cta">
+  <div class="pres-cta-bg" aria-hidden="true">
+    <div class="pres-cta-orb pres-cta-orb--purple"></div>
+    <div class="pres-cta-orb pres-cta-orb--green"></div>
+    <div class="pres-cta-rings">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <div class="pres-cta-card" appScrollReveal="scale-in">
+    <div class="pres-cta-eyebrow">
+      <span class="pres-cta-eyebrow-dot"></span>
+      Sessão de Descoberta Tecnológica
+    </div>
+
+    <h2 class="pres-cta-title" appScrollReveal="fade-up" [revealDelay]="0.1">
+      Vamos desenhar o
+      <span class="pres-cta-accent">próximo salto</span> do seu negócio.
+    </h2>
+
+    <p class="pres-cta-lead" appScrollReveal="fade-up" [revealDelay]="0.2">
+      60 minutos com nossos sócios para entender seu contexto, identificar as frentes de maior
+      retorno e propor um plano concreto. Sem enrolação, sem proposta genérica.
+    </p>
+
+    <ul class="pres-cta-highlights" appScrollReveal="fade-up" [revealDelay]="0.3">
+      <li *ngFor="let highlight of highlights">
+        <span class="pres-cta-check" aria-hidden="true">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </span>
+        {{ highlight }}
+      </li>
+    </ul>
+
+    <div class="pres-cta-actions" appScrollReveal="fade-up" [revealDelay]="0.4">
+      <a class="pres-cta-btn pres-cta-btn--primary" [href]="whatsappUrl" target="_blank" rel="noopener">
+        <span>Agendar sessão</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <polyline points="12 5 19 12 12 19"/>
+        </svg>
+      </a>
+      <a class="pres-cta-btn pres-cta-btn--ghost" href="mailto:contato&#64;rebuild.tec.br">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+          <polyline points="22,6 12,13 2,6"/>
+        </svg>
+        <span>contato&#64;rebuild.tec.br</span>
+      </a>
+    </div>
+  </div>
+
+  <footer class="pres-cta-footer">
+    <div class="pres-cta-footer-brand">
+      <span class="pres-cta-footer-logo">Rebuild</span>
+      <span class="pres-cta-footer-tag">Inteligência de Negócios · Infraestrutura Tecnológica</span>
+    </div>
+    <div class="pres-cta-footer-meta">
+      <span>© {{ year }} Rebuild · Todos os direitos reservados</span>
+    </div>
+  </footer>
+</section>
