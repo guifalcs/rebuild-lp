@@ -1,0 +1,60 @@
+<section class="pres-showcase">
+  <div class="pres-showcase-header">
+    <span class="pres-showcase-kicker" appScrollReveal="fade-up">Aplicações</span>
+    <h2 class="pres-showcase-title" appScrollReveal="fade-up" [revealDelay]="0.1">
+      Onde a tecnologia
+      <span class="pres-showcase-accent">destrava margem</span>.
+    </h2>
+    <p class="pres-showcase-lead" appScrollReveal="fade-up" [revealDelay]="0.2">
+      Aplicações reais, em áreas que impactam resultado. Clique em uma frente para ver o que
+      entregamos e qual ganho esperado.
+    </p>
+  </div>
+
+  <div class="pres-showcase-panel" appScrollReveal="fade-up" [revealDelay]="0.3">
+    <div class="pres-showcase-tabs" role="tablist">
+      <button
+        *ngFor="let app of applications"
+        class="pres-showcase-tab"
+        type="button"
+        role="tab"
+        [class.is-active]="active() === app.id"
+        [attr.aria-selected]="active() === app.id"
+        (click)="select(app.id)"
+      >
+        <span class="pres-showcase-tab-dot"></span>
+        {{ app.label }}
+      </button>
+    </div>
+
+    <div class="pres-showcase-content">
+      <ng-container *ngIf="currentApplication() as app">
+        <div class="pres-showcase-detail" [attr.data-app]="app.id">
+          <div class="pres-showcase-detail-body">
+            <h3 class="pres-showcase-detail-headline">{{ app.headline }}</h3>
+            <p class="pres-showcase-detail-narrative">{{ app.narrative }}</p>
+
+            <ul class="pres-showcase-detail-bullets">
+              <li *ngFor="let bullet of app.bullets">
+                <span class="pres-showcase-bullet-check" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </span>
+                {{ bullet }}
+              </li>
+            </ul>
+
+          </div>
+
+          <div class="pres-showcase-detail-metrics">
+            <div class="pres-showcase-metric" *ngFor="let metric of app.metrics">
+              <span class="pres-showcase-metric-value">{{ metric.value }}</span>
+              <span class="pres-showcase-metric-label">{{ metric.label }}</span>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

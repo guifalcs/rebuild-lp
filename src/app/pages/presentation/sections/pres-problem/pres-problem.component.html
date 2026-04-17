@@ -1,0 +1,62 @@
+<section class="pres-problem">
+  <div class="pres-problem-bg">
+    <div class="pres-problem-grid"></div>
+  </div>
+
+  <div class="pres-problem-inner">
+    <div class="pres-problem-content">
+      <span class="pres-problem-kicker" appScrollReveal="fade-up">O contexto</span>
+      <h2 class="pres-problem-title" appScrollReveal="fade-up" [revealDelay]="0.08">
+        Por que a tecnologia
+        <span class="pres-problem-strike">não é mais opcional</span>.
+      </h2>
+      <p class="pres-problem-lead" appScrollReveal="fade-up" [revealDelay]="0.16">
+        Empresas que ainda rodam no manual estão perdendo margem, tempo e relevância.
+        Enquanto isso, quem implementou tecnologia está multiplicando produtividade
+        e deixando concorrentes para trás.
+      </p>
+
+      <div class="pres-problem-quote" appScrollReveal="fade-up" [revealDelay]="0.24">
+        <svg class="pres-problem-quote-mark" width="34" height="34" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 0 1-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/>
+        </svg>
+        <p>O mercado não tolera mais ultrapassados.</p>
+      </div>
+    </div>
+
+    <div class="pres-problem-visual">
+      <div class="pres-problem-visual-card" appScrollReveal="fade-left">
+        <div class="pres-problem-visual-header">
+          <span class="pres-problem-visual-tag">Pressão competitiva</span>
+          <span class="pres-problem-visual-dot"></span>
+        </div>
+
+        <ul class="pres-problem-list">
+          <li
+            *ngFor="let p of pressures; let i = index"
+            class="pres-problem-list-item"
+            appScrollReveal="fade-up"
+            [revealDelay]="0.1 + i * 0.12"
+          >
+            <span class="pres-problem-list-index">0{{ i + 1 }}</span>
+            <div class="pres-problem-list-text">
+              <strong>{{ p.label }}</strong>
+              <span>{{ p.description }}</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="pres-problem-visual-footer">
+          <div class="pres-problem-outcome">
+            <span class="pres-problem-outcome-dot pres-problem-outcome-dot--red"></span>
+            <span class="pres-problem-outcome-text">Sem tecnologia → margem comprimida</span>
+          </div>
+          <div class="pres-problem-outcome">
+            <span class="pres-problem-outcome-dot pres-problem-outcome-dot--green"></span>
+            <span class="pres-problem-outcome-text">Com tecnologia → produtividade multiplicada</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,12 +1,13 @@
 import { Component, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { HeaderComponent } from '../../shared/header/header.component';
 import { gsap } from 'gsap';
 import { WHATSAPP_URL } from '../../shared/constants';
 
 @Component({
   selector: 'app-hero',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, RouterLink],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
