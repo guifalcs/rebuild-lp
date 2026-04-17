@@ -15,5 +15,7 @@ export class PresBrandsComponent {
     { name: 'BTG Pactual', logo: 'btg-pactual.png' },
     { name: 'Contabilizei', logo: 'contabilizei.png' },
     { name: 'ASIS by Sankhya', logo: 'asis.png' },
+    { name: 'Certificar', logo: 'certificar.png' },
+    { name: 'Support Health', logo: 'support-health.png' },
   ];
 }
