@@ -20,17 +20,17 @@ interface Member {
 export class PresTeamComponent {
   readonly members: Member[] = [
     {
-      name: 'Renato',
+      name: 'Renato Andrade',
       role: 'Sócio fundador · Estratégia',
-      bio: 'Traduz a complexidade do negócio em roadmap tecnológico. Lidera o diagnóstico, a relação com clientes e a direção estratégica da operação.',
-      initials: 'RE',
+      bio: 'Mais de 10 anos de experiência em gestão de negócios.',
+      initials: 'RA',
       tags: ['Estratégia', 'Negócio', 'Relacionamento'],
       accent: 'purple',
     },
     {
       name: 'Guilherme Falcão',
       role: 'Sócio fundador · Tecnologia',
-      bio: 'Arquiteta as soluções e garante a excelência técnica das entregas. Conduz time de engenharia, IA e dados com foco em performance e escala.',
+      bio: 'Engenheiro de Software especialista em soluções de alta performance.',
       initials: 'GF',
       tags: ['Arquitetura', 'IA', 'Full-stack'],
       accent: 'green',
@@ -38,7 +38,7 @@ export class PresTeamComponent {
     {
       name: 'Daniel Augusto',
       role: 'Sócio fundador · Operação',
-      bio: 'Transforma plano em execução. Lidera projetos, orquestra rituais e garante que cada entrega chegue no prazo, no escopo e com qualidade.',
+      bio: 'Experiência em soluções tecnológicas e IA para empresas como Meta, IBM e BTG Pactual.',
       initials: 'DA',
       tags: ['Projetos', 'Delivery', 'Qualidade'],
       accent: 'cyan',
