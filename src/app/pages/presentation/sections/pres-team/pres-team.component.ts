@@ -36,8 +36,6 @@ export class PresTeamComponent {
       role: 'Founder · Tecnologia',
       bio: 'Engenheiro de Software especialista em soluções de alta performance.',
       photo: 'team-guilherme.jpg',
-      photoScale: 1.6,
-      photoPosition: '50% 10%',
       tags: ['Arquitetura', 'IA', 'Full-stack'],
       accent: 'green',
     },
