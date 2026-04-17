@@ -39,11 +39,16 @@
 
 .pres-values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(6, 1fr);
   gap: 1.25rem;
 }
 
 .pres-value-card {
+  grid-column: span 2;
+
+  &:nth-child(4) { grid-column: 2 / span 2; }
+  &:nth-child(5) { grid-column: 4 / span 2; }
+
   position: relative;
   padding: 2rem 1.75rem;
   border-radius: 20px;
@@ -123,6 +128,22 @@
   line-height: 1.6;
 }
 
+@media (max-width: 900px) {
+  .pres-values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pres-value-card {
+    grid-column: span 1 !important;
+
+    &:nth-child(5) {
+      grid-column: 1 / -1 !important;
+      max-width: calc(50% - 0.625rem);
+      margin: 0 auto;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .pres-values {
     padding: 4.5rem 5% 5rem;
@@ -135,5 +156,21 @@
   .pres-value-card {
     min-height: auto;
     padding: 1.5rem 1.25rem;
+
+    &:nth-child(5) {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .pres-values-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pres-value-card:nth-child(5) {
+    grid-column: span 1 !important;
+    max-width: 100%;
+    margin: 0;
   }
 }
