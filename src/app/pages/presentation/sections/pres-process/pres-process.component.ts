@@ -22,55 +22,55 @@ export class PresProcessComponent {
     {
       number: '01',
       title: 'Diagnóstico',
-      subtitle: 'Imersão guiada no seu negócio.',
+      subtitle: 'Entendemos os gargalos da sua empresa.',
       description:
-        'Mapeamos processos, gargalos, stack atual e cultura de dados. Priorizamos as frentes com maior ROI e risco controlado.',
-      deliverables: ['Mapa de processos', 'Priorização por ROI', 'Hipóteses validadas'],
+        'Entendemos os gargalos da sua empresa de forma detalhada, mapeando a dor e arquitetando como curá-la.',
+      deliverables: ['Mapeamento de gargalos', 'Diagnóstico detalhado', 'Arquitetura da solução'],
       icon: 'search',
     },
     {
       number: '02',
       title: 'Proposta',
-      subtitle: 'Roadmap claro, sem letras miúdas.',
+      subtitle: 'Apresentamos a solução.',
       description:
-        'Desenhamos escopo, arquitetura, investimento e cronograma. Você decide com transparência — e sabe exatamente o que vai receber, quando e por quanto.',
-      deliverables: ['Escopo detalhado', 'Arquitetura alvo', 'Plano e investimento'],
+        'Apresentamos a solução que vai transformar seus processos.',
+      deliverables: ['Proposta personalizada', 'Escopo definido', 'Plano de execução'],
       icon: 'document',
     },
     {
       number: '03',
       title: 'Desenvolvimento',
-      subtitle: 'Entregas incrementais e testáveis.',
+      subtitle: 'Construímos a solução.',
       description:
-        'Sprints curtas, com demos frequentes e visibilidade total. Você vê o produto crescer e pode redirecionar cedo se necessário.',
-      deliverables: ['Sprints com demos', 'Code review contínuo', 'Ambiente de homologação'],
+        'Construímos uma solução robusta, cercada de testes e de uma infraestrutura segura.',
+      deliverables: ['Solução robusta', 'Testes completos', 'Infraestrutura segura'],
       icon: 'build',
     },
     {
       number: '04',
       title: 'Homologação',
-      subtitle: 'Validação com dados do mundo real.',
+      subtitle: 'Implantação e monitoramento intenso.',
       description:
-        'Testes integrados, UAT com key users e ajuste fino de performance. Liberamos para produção só quando tudo atende aos critérios.',
-      deliverables: ['UAT com stakeholders', 'Testes de carga', 'Documentação técnica'],
+        'Realizamos a implantação na empresa, seguindo com o monitoramento de forma mais intensa, cercando qualquer falha.',
+      deliverables: ['Implantação na empresa', 'Monitoramento intensivo', 'Cobertura de falhas'],
       icon: 'check',
     },
     {
       number: '05',
       title: 'Go Live',
-      subtitle: 'Lançamento com acompanhamento de perto.',
+      subtitle: 'Entrega final validada.',
       description:
-        'Cutover planejado, rollback garantido e war room ativo. Nas primeiras semanas, estamos junto para garantir estabilidade e adoção.',
-      deliverables: ['Plano de cutover', 'Monitoramento ativo', 'Treinamento de usuários'],
+        'Fazemos a entrega final da solução validada e gerando resultados.',
+      deliverables: ['Entrega validada', 'Solução em produção', 'Resultados mensuráveis'],
       icon: 'rocket',
     },
     {
       number: '06',
       title: 'Sustentação',
-      subtitle: 'Evolução contínua e parceria de longo prazo.',
+      subtitle: 'Manutenção e evolução contínua.',
       description:
-        'SLAs claros, evolução por backlog priorizado e revisões recorrentes de valor. Tecnologia que acompanha o crescimento do seu negócio.',
-      deliverables: ['SLA de atendimento', 'Roadmap evolutivo', 'Revisões de valor'],
+        'Prezamos pela manutenção e evolução do projeto para continuar multiplicando os resultados.',
+      deliverables: ['Manutenção contínua', 'Evolução do projeto', 'Multiplicação de resultados'],
       icon: 'infinity',
     },
   ];
