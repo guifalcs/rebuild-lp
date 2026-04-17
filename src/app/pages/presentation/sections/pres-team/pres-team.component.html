@@ -24,8 +24,14 @@
       [revealDelay]="0.12 * i"
     >
       <div class="pres-team-card-top">
-        <div class="pres-team-avatar" aria-hidden="true">
-          <span>{{ member.initials }}</span>
+        <div class="pres-team-avatar">
+          <img
+            [src]="member.photo"
+            [alt]="member.name"
+            [style.transform]="member.photoScale ? 'scale(' + member.photoScale + ')' : null"
+            [style.transform-origin]="member.photoScale ? 'center 20%' : null"
+            [style.object-position]="member.photoPosition || 'center top'"
+          />
         </div>
         <div class="pres-team-status">
           <span class="pres-team-status-dot"></span>

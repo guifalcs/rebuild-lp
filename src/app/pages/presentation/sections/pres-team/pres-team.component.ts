@@ -6,7 +6,9 @@ interface Member {
   name: string;
   role: string;
   bio: string;
-  initials: string;
+  photo: string;
+  photoScale?: number;
+  photoPosition?: string;
   tags: string[];
   accent: 'purple' | 'green' | 'cyan';
 }
@@ -21,25 +23,27 @@ export class PresTeamComponent {
   readonly members: Member[] = [
     {
       name: 'Renato Andrade',
-      role: 'Founder · Estratégia',
+      role: 'Especialista em gestão',
       bio: 'Mais de 10 anos de experiência em gestão de negócios.',
-      initials: 'RA',
+      photo: 'team-renato.jpg',
+      photoScale: 1.8,
+      photoPosition: '50% 5%',
       tags: ['Estratégia', 'Negócio', 'Relacionamento'],
       accent: 'purple',
     },
     {
       name: 'Guilherme Falcão',
-      role: 'Founder · Tecnologia',
+      role: 'Especialista em tecnologia',
       bio: 'Engenheiro de Software especialista em soluções de alta performance.',
-      initials: 'GF',
+      photo: 'team-guilherme.jpg',
       tags: ['Arquitetura', 'IA', 'Full-stack'],
       accent: 'green',
     },
     {
       name: 'Daniel Augusto',
-      role: 'Founder · Operação',
+      role: 'Especialista em tecnologia',
       bio: 'Experiência em soluções tecnológicas e IA para empresas como Meta, IBM e BTG Pactual.',
-      initials: 'DA',
+      photo: 'team-daniel.jpg',
       tags: ['Projetos', 'Delivery', 'Qualidade'],
       accent: 'cyan',
     },

@@ -7,6 +7,7 @@ import { PresShowcaseComponent } from './sections/pres-showcase/pres-showcase.co
 import { PresProcessComponent } from './sections/pres-process/pres-process.component';
 import { PresTeamComponent } from './sections/pres-team/pres-team.component';
 import { PresCtaComponent } from './sections/pres-cta/pres-cta.component';
+import { PresBrandsComponent } from './sections/pres-brands/pres-brands.component';
 
 @Component({
   selector: 'app-presentation',
@@ -18,6 +19,7 @@ import { PresCtaComponent } from './sections/pres-cta/pres-cta.component';
     PresShowcaseComponent,
     PresProcessComponent,
     PresTeamComponent,
+    PresBrandsComponent,
     PresCtaComponent,
   ],
   templateUrl: './presentation.component.html',
