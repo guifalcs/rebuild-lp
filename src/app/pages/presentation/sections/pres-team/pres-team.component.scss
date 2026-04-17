@@ -138,15 +138,13 @@ $team-accents: (
 }
 
 .pres-team-avatar {
-  width: 64px;
-  height: 64px;
+  width: 72px;
+  height: 72px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--team-bg) 0%, rgba(255, 255, 255, 0.03) 100%);
-  border: 1px solid var(--team-border);
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  border: 2px solid var(--team-border);
+  overflow: hidden;
   position: relative;
+  flex-shrink: 0;
 
   &::before {
     content: '';
@@ -158,12 +156,12 @@ $team-accents: (
     z-index: -1;
   }
 
-  span {
-    font-family: 'Phonk', 'Poppins', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--team-glow);
-    letter-spacing: 0.04em;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
   }
 }
 

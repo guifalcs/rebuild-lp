@@ -6,7 +6,7 @@ interface Member {
   name: string;
   role: string;
   bio: string;
-  initials: string;
+  photo: string;
   tags: string[];
   accent: 'purple' | 'green' | 'cyan';
 }
@@ -23,7 +23,7 @@ export class PresTeamComponent {
       name: 'Renato Andrade',
       role: 'Founder · Estratégia',
       bio: 'Mais de 10 anos de experiência em gestão de negócios.',
-      initials: 'RA',
+      photo: 'team-renato.jpg',
       tags: ['Estratégia', 'Negócio', 'Relacionamento'],
       accent: 'purple',
     },
@@ -31,7 +31,7 @@ export class PresTeamComponent {
       name: 'Guilherme Falcão',
       role: 'Founder · Tecnologia',
       bio: 'Engenheiro de Software especialista em soluções de alta performance.',
-      initials: 'GF',
+      photo: 'team-guilherme.jpg',
       tags: ['Arquitetura', 'IA', 'Full-stack'],
       accent: 'green',
     },
@@ -39,7 +39,7 @@ export class PresTeamComponent {
       name: 'Daniel Augusto',
       role: 'Founder · Operação',
       bio: 'Experiência em soluções tecnológicas e IA para empresas como Meta, IBM e BTG Pactual.',
-      initials: 'DA',
+      photo: 'team-daniel.jpg',
       tags: ['Projetos', 'Delivery', 'Qualidade'],
       accent: 'cyan',
     },

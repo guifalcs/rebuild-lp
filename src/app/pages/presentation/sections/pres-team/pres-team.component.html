@@ -24,8 +24,8 @@
       [revealDelay]="0.12 * i"
     >
       <div class="pres-team-card-top">
-        <div class="pres-team-avatar" aria-hidden="true">
-          <span>{{ member.initials }}</span>
+        <div class="pres-team-avatar">
+          <img [src]="member.photo" [alt]="member.name" />
         </div>
         <div class="pres-team-status">
           <span class="pres-team-status-dot"></span>
