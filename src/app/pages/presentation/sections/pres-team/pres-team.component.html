@@ -29,6 +29,7 @@
             [src]="member.photo"
             [alt]="member.name"
             [style.transform]="member.photoScale ? 'scale(' + member.photoScale + ')' : null"
+            [style.transform-origin]="member.photoScale ? 'center 20%' : null"
             [style.object-position]="member.photoPosition || 'center top'"
           />
         </div>

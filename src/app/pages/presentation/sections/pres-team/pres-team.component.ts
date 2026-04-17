@@ -27,7 +27,7 @@ export class PresTeamComponent {
       bio: 'Mais de 10 anos de experiência em gestão de negócios.',
       photo: 'team-renato.jpg',
       photoScale: 1.8,
-      photoPosition: '50% 15%',
+      photoPosition: '50% 5%',
       tags: ['Estratégia', 'Negócio', 'Relacionamento'],
       accent: 'purple',
     },
