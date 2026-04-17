@@ -21,7 +21,7 @@ export class PresTeamComponent {
   readonly members: Member[] = [
     {
       name: 'Renato Andrade',
-      role: 'Sócio fundador · Estratégia',
+      role: 'Founder · Estratégia',
       bio: 'Mais de 10 anos de experiência em gestão de negócios.',
       initials: 'RA',
       tags: ['Estratégia', 'Negócio', 'Relacionamento'],
@@ -29,7 +29,7 @@ export class PresTeamComponent {
     },
     {
       name: 'Guilherme Falcão',
-      role: 'Sócio fundador · Tecnologia',
+      role: 'Founder · Tecnologia',
       bio: 'Engenheiro de Software especialista em soluções de alta performance.',
       initials: 'GF',
       tags: ['Arquitetura', 'IA', 'Full-stack'],
@@ -37,7 +37,7 @@ export class PresTeamComponent {
     },
     {
       name: 'Daniel Augusto',
-      role: 'Sócio fundador · Operação',
+      role: 'Founder · Operação',
       bio: 'Experiência em soluções tecnológicas e IA para empresas como Meta, IBM e BTG Pactual.',
       initials: 'DA',
       tags: ['Projetos', 'Delivery', 'Qualidade'],
