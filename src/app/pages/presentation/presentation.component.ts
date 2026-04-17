@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { PresHeroComponent } from './sections/pres-hero/pres-hero.component';
 import { PresMissionComponent } from './sections/pres-mission/pres-mission.component';
 import { PresValuesComponent } from './sections/pres-values/pres-values.component';
 import { PresProblemComponent } from './sections/pres-problem/pres-problem.component';
@@ -14,7 +13,6 @@ import { PresCtaComponent } from './sections/pres-cta/pres-cta.component';
   selector: 'app-presentation',
   imports: [
     RouterLink,
-    PresHeroComponent,
     PresMissionComponent,
     PresValuesComponent,
     PresProblemComponent,
