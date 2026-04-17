@@ -1,6 +1,5 @@
 import { Component, OnInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterLink } from '@angular/router';
 
 interface NavItem {
   id: string;
@@ -9,7 +8,7 @@ interface NavItem {
 
 @Component({
   selector: 'app-pres-header',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './pres-header.component.html',
   styleUrl: './pres-header.component.scss',
 })
