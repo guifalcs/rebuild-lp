@@ -17,5 +17,6 @@ export class PresBrandsComponent {
     { name: 'ASIS by Sankhya', logo: 'asis.png' },
     { name: 'Certificar', logo: 'certificar.png' },
     { name: 'Support Health', logo: 'support-health.png' },
+    { name: 'PSO Engenharia Elétrica', logo: 'pso.png' },
   ];
 }
