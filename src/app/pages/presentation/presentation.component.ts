@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PresHeaderComponent } from './sections/pres-header/pres-header.component';
+import { RouterLink } from '@angular/router';
 import { PresHeroComponent } from './sections/pres-hero/pres-hero.component';
 import { PresMissionComponent } from './sections/pres-mission/pres-mission.component';
 import { PresValuesComponent } from './sections/pres-values/pres-values.component';
@@ -13,7 +13,7 @@ import { PresCtaComponent } from './sections/pres-cta/pres-cta.component';
 @Component({
   selector: 'app-presentation',
   imports: [
-    PresHeaderComponent,
+    RouterLink,
     PresHeroComponent,
     PresMissionComponent,
     PresValuesComponent,

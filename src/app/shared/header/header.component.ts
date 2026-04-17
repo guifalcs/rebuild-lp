@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
 import { isPlatformBrowser, CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { WHATSAPP_URL } from '../constants';
 
 @Component({
   selector: 'app-header',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
