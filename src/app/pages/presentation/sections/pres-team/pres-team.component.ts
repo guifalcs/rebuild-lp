@@ -7,6 +7,8 @@ interface Member {
   role: string;
   bio: string;
   photo: string;
+  photoScale?: number;
+  photoPosition?: string;
   tags: string[];
   accent: 'purple' | 'green' | 'cyan';
 }
@@ -24,6 +26,8 @@ export class PresTeamComponent {
       role: 'Founder · Estratégia',
       bio: 'Mais de 10 anos de experiência em gestão de negócios.',
       photo: 'team-renato.jpg',
+      photoScale: 1.8,
+      photoPosition: '50% 15%',
       tags: ['Estratégia', 'Negócio', 'Relacionamento'],
       accent: 'purple',
     },
@@ -32,6 +36,8 @@ export class PresTeamComponent {
       role: 'Founder · Tecnologia',
       bio: 'Engenheiro de Software especialista em soluções de alta performance.',
       photo: 'team-guilherme.jpg',
+      photoScale: 1.6,
+      photoPosition: '50% 10%',
       tags: ['Arquitetura', 'IA', 'Full-stack'],
       accent: 'green',
     },
