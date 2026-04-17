@@ -8,9 +8,12 @@
   </div>
 
   <div class="pres-cta-card" appScrollReveal="scale-in">
-    <div class="pres-cta-eyebrow">
+    <div class="pres-cta-eyebrow" appScrollReveal="fade-up">
       <span class="pres-cta-eyebrow-dot"></span>
-      Sessão de Descoberta Tecnológica
+      <div class="pres-cta-eyebrow-copy">
+        <span class="pres-cta-eyebrow-label">Sessão estratégica</span>
+        <span class="pres-cta-eyebrow-detail">Conversa prática para acelerar decisões</span>
+      </div>
     </div>
 
     <h2 class="pres-cta-title" appScrollReveal="fade-up" [revealDelay]="0.1">
@@ -30,7 +33,10 @@
             <polyline points="20 6 9 17 4 12"/>
           </svg>
         </span>
-        {{ highlight }}
+        <div class="pres-cta-highlight-copy">
+          <strong>{{ highlight.title }}</strong>
+          <span>{{ highlight.description }}</span>
+        </div>
       </li>
     </ul>
 
