@@ -8,9 +8,12 @@
   </div>
 
   <div class="pres-cta-card" appScrollReveal="scale-in">
-    <div class="pres-cta-eyebrow">
+    <div class="pres-cta-eyebrow" appScrollReveal="fade-up">
       <span class="pres-cta-eyebrow-dot"></span>
-      Sessão de Descoberta Tecnológica
+      <div class="pres-cta-eyebrow-copy">
+        <span class="pres-cta-eyebrow-label">Sessão estratégica</span>
+        <span class="pres-cta-eyebrow-detail">Conversa prática para acelerar decisões</span>
+      </div>
     </div>
 
     <h2 class="pres-cta-title" appScrollReveal="fade-up" [revealDelay]="0.1">
@@ -30,7 +33,10 @@
             <polyline points="20 6 9 17 4 12"/>
           </svg>
         </span>
-        {{ highlight }}
+        <div class="pres-cta-highlight-copy">
+          <strong>{{ highlight.title }}</strong>
+          <span>{{ highlight.description }}</span>
+        </div>
       </li>
     </ul>
 
@@ -41,13 +47,6 @@
           <line x1="5" y1="12" x2="19" y2="12"/>
           <polyline points="12 5 19 12 12 19"/>
         </svg>
-      </a>
-      <a class="pres-cta-btn pres-cta-btn--ghost" href="mailto:contato&#64;rebuild.tec.br">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-          <polyline points="22,6 12,13 2,6"/>
-        </svg>
-        <span>contato&#64;rebuild.tec.br</span>
       </a>
     </div>
   </div>
