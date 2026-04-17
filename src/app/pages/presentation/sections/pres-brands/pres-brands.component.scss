@@ -1,0 +1,64 @@
+.pres-brands {
+  padding: 3rem 5% 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pres-brands-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  font-weight: 500;
+  text-align: center;
+}
+
+.pres-brands-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2.5rem 4rem;
+  width: 100%;
+}
+
+.pres-brands-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pres-brands-logo {
+  height: 28px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.35;
+  transition: opacity 0.3s ease;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .pres-brands {
+    padding: 2.5rem 5% 3rem;
+    gap: 1.5rem;
+  }
+
+  .pres-brands-row {
+    gap: 1.75rem 3rem;
+  }
+
+  .pres-brands-logo {
+    height: 22px;
+  }
+}
